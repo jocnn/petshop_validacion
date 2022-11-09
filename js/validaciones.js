@@ -52,8 +52,20 @@ const mensajeDeError = {
 	},
 	telefono: {
 		valueMissing: "El campo teléfono no puede estar vacío",
-		patternMismatch: "El formato requerido es de 10 digitos XXXXXXXXXX"
-	}
+		patternMismatch: "El formato requerido es de 10 digitos XXXXXXXXXX",
+	},
+	direccion: {
+		valueMissing: "El campo de dirección no puede estar vacío",
+		patternMismatch: "La direccion debe contener entre 10 y 40 caracteres",
+	},
+	ciudad: {
+		valueMissing: "El campo de ciudad no puede estar vacío",
+		patternMismatch: "La ciudad debe contener entre 10 y 40 caracteres",
+	},
+	estado: {
+		valueMissing: "El campo de estado no puede estar vacío",
+		patternMismatch: "El estado debe contener entre 10 y 40 caracteres",
+	},
 }
 
 const validadores = {
