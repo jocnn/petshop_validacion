@@ -36,7 +36,8 @@
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
                     <div class="input-container">
-                        <input name="password" id="password" autocomplete="current-password" class="input" type="password" placeholder="Contraseña" required data-tipo="password" minlength="6" maxlength="10">
+                        <input name="password" id="password" autocomplete="current-password" class="input" type="password" placeholder="Contraseña" 
+                            required data-tipo="password" minlength="6" maxlength="10">
                         <label class="input-label" for="password">Contraseña</label>
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
@@ -49,7 +50,8 @@
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
                     <div class="input-container">
-                        <input name="phoneNumber" id="phoneNumber" class="input" type="number" placeholder="Número telefónico" minlength="6" maxlength="10">
+                        <input name="phoneNumber" id="phoneNumber" class="input" type="text" placeholder="Número telefónico" pattern="\d{10}" 
+                            onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10" required data-tipo="telefono">
                         <label class="input-label" for="phoneNumber">Número telefónico</label>
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>

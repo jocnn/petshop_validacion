@@ -50,6 +50,10 @@ const mensajeDeError = {
 		valueMissing: "El campo fecha no puede estar vacío",
 		customError: "Debes tener al menos 18 años de edad",
 	},
+	telefono: {
+		valueMissing: "El campo teléfono no puede estar vacío",
+		patternMismatch: "El formato requerido es de 10 digitos XXXXXXXXXX"
+	}
 }
 
 const validadores = {
