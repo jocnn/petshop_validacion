@@ -6,26 +6,48 @@ export function valida(input) {
 	}
 	if (input.validity.valid) {
 		input.parentElement.classList.remove("input-container--invalid")
+		input.parentElement.querySelector(".input-message-error").innerHTML = ""
 	} else {
 		input.parentElement.classList.add("input-container--invalid")
+		input.parentElement.querySelector(".input-message-error").innerHTML = mostrarMensajeDeError(tipoDeInput, input)
 	}
+}
+
+const tipoDeErrores = [
+	"valueMissing",
+	"typeMismatch",
+	"patternMismatch",
+	"customError",
+]
+
+function mostrarMensajeDeError(tipoDeInput, input) {
+	let mensaje = ""
+	tipoDeErrores.forEach(error => {
+		if (input.validity[error]) {
+			console.log(tipoDeInput, error)
+			console.log(input.validity[error])
+			console.log(mensajeDeError[tipoDeInput][error])
+			mensaje = mensajeDeError[tipoDeInput][error]
+		}
+	})
+	return mensaje
 }
 
 const mensajeDeError = {
 	nombre: {
-		valueMissing: "Este campo no puede estar vacío",
+		valueMissing: "El campo nombre no puede estar vacío",
 	},
 	email: {
-		valueMissing: "Este campo no puede estar vacío",
+		valueMissing: "El campo email no puede estar vacío",
 		typeMismatch: "El correo no es válida",
 	},
 	password: {
-		valueMissing: "Este campo no puede estar vacío",
+		valueMissing: "El campo contraseña no puede estar vacío",
 		patternMismatch:
 			"Al menos 2 caracteres, máximo 10, debe contener una letra minúscula, una letra mayúscula, un número y no debe contener caracteres especiales.",
 	},
 	nacimiento: {
-		valueMissing: "Este campo no puede estar vacío",
+		valueMissing: "El campo fecha no puede estar vacío",
 		customError: "Debes tener al menos 18 años de edad",
 	},
 }
